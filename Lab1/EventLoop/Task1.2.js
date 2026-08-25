@@ -22,6 +22,7 @@ function main(){
 }
 main();
 
+
 // Js is  synchronous and single threaded
 // in asynchronous we use Eventloop to manage call stackls
 // Asynchronous using Timer ==> 1. Set Time out 
