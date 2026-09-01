@@ -1,0 +1,55 @@
+# TrackTag User Manual
+
+## 1. Product Overview
+
+TrackTag is a compact smart tracking device designed to help locate personal belongings such as keys, bags, wallets, luggage, and other valuable items.
+
+## 2. Getting Started
+
+1. Remove the TrackTag from its packaging.
+2. Activate the device using the power button.
+3. Turn on Bluetooth on the smartphone.
+4. Open the TrackTag application.
+5. Follow the on-screen instructions to pair the device.
+
+## 3. Connecting TrackTag
+
+1. Keep TrackTag close to the smartphone.
+2. Enable Bluetooth and location services.
+3. Open the application and select **Add Device**.
+4. Select TrackTag from the available devices.
+5. Complete the pairing process.
+
+## 4. Finding Your Device
+
+Open the application and select the connected TrackTag. The application displays its last known location. If the device is nearby, use the **Play Sound** option to help locate it.
+
+## 5. Lost Mode
+
+Enable **Lost Mode** when TrackTag is missing. The device can be monitored through its last known location, allowing the user to identify where it was last detected.
+
+## 6. Battery
+
+TrackTag uses a replaceable battery. Replace the battery when the device stops responding or the battery level becomes low.
+
+## 7. Safety Instructions
+
+* Keep the device away from water unless it is specifically rated as waterproof.
+* Do not expose the device to extreme temperatures.
+* Keep the battery away from children.
+* Do not attempt to damage or open the electronic components.
+
+## 8. Troubleshooting
+
+**TrackTag is not connecting:**
+Check that Bluetooth and location services are enabled and keep the device close to the smartphone.
+
+**Location is not updating:**
+Move the device to an area with better connectivity and reopen the application.
+
+**TrackTag is not making a sound:**
+Check the battery and ensure the device is connected to the application.
+
+## 9. Support
+
+For additional assistance, check the TrackTag application or contact the product support team.
