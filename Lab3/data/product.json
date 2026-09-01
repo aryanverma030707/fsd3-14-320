@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "name": "iPhone 16",
+      "company": "Apple",
+      "price": 79900,
+      "discount": 10,
+      "category": "Mobile Phone",
+      "ram": "8GB",
+      "storage": "128GB"
+    },
+    {
+      "id": 2,
+      "name": "Galaxy S25",
+      "company": "Samsung",
+      "price": 74999,
+      "discount": 15,
+      "category": "Mobile Phone",
+      "ram": "12GB",
+      "storage": "256GB"
+    },
+    {
+      "id": 3,
+      "name": "Pixel 9",
+      "company": "Google",
+      "price": 79999,
+      "discount": 12,
+      "category": "Mobile Phone",
+      "ram": "12GB",
+      "storage": "256GB"
+    },
+    {
+      "id": 4,
+      "name": "OnePlus 13",
+      "company": "OnePlus",
+      "price": 69999,
+      "discount": 10,
+      "category": "Mobile Phone",
+      "ram": "12GB",
+      "storage": "256GB"
+    },
+    {
+      "id": 5,
+      "name": "Nothing Phone 3",
+      "company": "Nothing",
+      "price": 44999,
+      "discount": 8,
+      "category": "Mobile Phone",
+      "ram": "12GB",
+      "storage": "256GB"
+    },
+    {
+      "id": 6,
+      "name": "Xiaomi 15",
+      "company": "Xiaomi",
+      "price": 64999,
+      "discount": 12,
+      "category": "Mobile Phone",
+      "ram": "12GB",
+      "storage": "512GB"
+    },
+    {
+      "id": 7,
+      "name": "Vivo X200",
+      "company": "Vivo",
+      "price": 65999,
+      "discount": 10,
+      "category": "Mobile Phone",
+      "ram": "16GB",
+      "storage": "512GB"
+    },
+    {
+      "id": 8,
+      "name": "Oppo Find X8",
+      "company": "Oppo",
+      "price": 69999,
+      "discount": 15,
+      "category": "Mobile Phone",
+      "ram": "16GB",
+      "storage": "512GB"
+    },
+    {
+      "id": 9,
+      "name": "Realme GT 7",
+      "company": "Realme",
+      "price": 39999,
+      "discount": 10,
+      "category": "Mobile Phone",
+      "ram": "12GB",
+      "storage": "256GB"
+    },
+    {
+      "id": 10,
+      "name": "Motorola Edge 60",
+      "company": "Motorola",
+      "price": 29999,
+      "discount": 10,
+      "category": "Mobile Phone",
+      "ram": "8GB",
+      "storage": "256GB"
+    }
+  ]
