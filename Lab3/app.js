@@ -14,11 +14,47 @@
 
 
 import http from 'http';
+import * as teams from './teams.js';
 
-const server = http.createServer((req, res) => {
-  res.end("SIH Registsration Portal");
+const PORT = 5001;
+
+const sendJsonResponse = (res, statusCode, data) => {
+  res.writeHead(statusCode, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify(data));
+};
+
+const parswJSONBody = (req) => {
+  new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', (chunk) => {
+      body += chunk.toString();
+    });
+    req.on('end', () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (error) {
+        reject(error);
+      }
+    });
+  });
+}
+
+const server = http.createServer(async (req, res) => {
+  const {pathname, query } = parseurl(req.url, true);
+  console.log('pathname:', pathname);
+  console.log('query:', query);
+  console.log('method:', req.method);
+
+  if (pathname === "/api/v1/teams" && req.method === 'GET') {
+    const {total} = query;
+    const teams = teams.getAllTeams();
+    console.log("Teams:", teams);
+    sendJsonResponse(res, 200, teams);
+  } else {
+    sendJsonResponse(res, 404, { message: '404 - Page not found' });
+  }
 });
 
-server.listen(3000, () => {
-  console.log('SIH Server is running on http://localhost:3000');
+server.listen(PORT, () => {
+  console.log(`SIH Server is running on http://localhost:${PORT}`);
 });
