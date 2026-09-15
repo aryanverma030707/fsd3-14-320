@@ -4,15 +4,15 @@ let teams = [
       tname: "Rusty",
       tl: "Aryan Verma",
       email: "aryanverma@gmail.com",
-      members: 6,
+      members: 6
     },
     {
       id: 2,
       tname: "Code Crafters",
       tl: "Manisha Singh",
       email: "mani.singh@gmail.com",
-      members: 5,
-    },
+      members: 5
+    }
   ];
   
   let nextId = 3;
@@ -36,8 +36,7 @@ let teams = [
   
   export const deleteTeam = (id) => {
     const index = teams.findIndex((team) => team.id === id);
-    if (index == -1) return false;
+    if (index === -1) return false;
     teams.splice(index, 1);
     return true;
   };
-  
