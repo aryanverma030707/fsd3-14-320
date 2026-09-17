@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[PRODUCT_NAME] — Premium Wireless Audio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+    --cream:#f3efe7;
+    --paper:#faf8f3;
+    --charcoal:#20211e;
+    --muted:#706f68;
+    --line:#dcd7cb;
+    --olive:#68705a;
+    --olive-dark:#4d5542;
+    --copper:#a66f4d;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--paper);
+    color:var(--charcoal);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+}
+
+nav{
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:600;
+    letter-spacing:-.5px;
+}
+
+.logo small{
+    color:var(--muted);
+    font-size:11px;
+    font-weight:400;
+    letter-spacing:2px;
+    margin-left:8px;
+}
+
+.nav-links{
+    display:flex;
+    gap:34px;
+    list-style:none;
+    font-size:14px;
+}
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:1px;
+    left:0;
+    bottom:-5px;
+    background:var(--charcoal);
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.shop-link{
+    padding:11px 19px;
+    background:var(--charcoal);
+    color:white;
+    border-radius:3px;
+    font-size:13px;
+}
+
+.menu{
+    display:none;
+    border:0;
+    background:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:var(--cream);
+    display:flex;
+    align-items:center;
+    padding:130px 0 80px;
+    overflow:hidden;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.eyebrow{
+    color:var(--copper);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:11px;
+    font-weight:600;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-weight:500;
+    font-size:clamp(48px,6vw,82px);
+    line-height:1.02;
+    letter-spacing:-2px;
+    max-width:700px;
+    margin:18px 0 24px;
+}
+
+.hero h1 em{
+    color:var(--olive-dark);
+    font-style:italic;
+}
+
+.hero-copy{
+    max-width:540px;
+    font-size:17px;
+    color:var(--muted);
+    margin-bottom:34px;
+}
+
+.hero-buttons{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.primary-btn{
+    border:0;
+    background:var(--charcoal);
+    color:#fff;
+    padding:15px 26px;
+    border-radius:3px;
+    cursor:pointer;
+    font-size:13px;
+    transition:.3s;
+}
+
+.primary-btn:hover{
+    background:var(--olive-dark);
+}
+
+.secondary-btn{
+    font-size:13px;
+    border-bottom:1px solid var(--charcoal);
+    padding-bottom:4px;
+}
+
+.price-line{
+    margin-top:26px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    font-size:13px;
+}
+
+.price{
+    font-weight:600;
+}
+
+.price-note{
+    color:var(--muted);
+}
+
+/* PRODUCT VISUAL */
+
+.product-stage{
+    min-height:590px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.product-backdrop{
+    width:470px;
+    height:470px;
+    border-radius:50%;
+    background:#dcd7ca;
+    position:absolute;
+}
+
+.product-shadow{
+    width:350px;
+    height:65px;
+    position:absolute;
+    bottom:80px;
+    border-radius:50%;
+    background:rgba(32,33,30,.16);
+    filter:blur(22px);
+}
+
+/* CSS HEADPHONES */
+
+.headphones{
+    position:relative;
+    width:300px;
+    height:335px;
+    z-index:2;
+}
+
+.band{
+    position:absolute;
+    width:225px;
+    height:250px;
+    left:38px;
+    top:25px;
+    border:25px solid #252621;
+    border-bottom:0;
+    border-radius:130px 130px 0 0;
+}
+
+.left-cup,
+.right-cup{
+    position:absolute;
+    width:72px;
+    height:125px;
+    top:194px;
+    border-radius:27px;
+    background:linear-gradient(145deg,#34352f,#171815);
+    box-shadow:15px 18px 25px rgba(0,0,0,.16);
+}
+
+.left-cup{
+    left:0;
+}
+
+.right-cup{
+    right:0;
+}
+
+.left-pad,
+.right-pad{
+    position:absolute;
+    width:42px;
+    height:83px;
+    top:215px;
+    border-radius:18px;
+    background:#7d7b6d;
+}
+
+.left-pad{
+    left:25px;
+}
+
+.right-pad{
+    right:25px;
+}
+
+.ear-detail{
+    position:absolute;
+    width:13px;
+    height:13px;
+    top:250px;
+    border-radius:50%;
+    background:var(--copper);
+}
+
+.left-cup .ear-detail{
+    left:29px;
+}
+
+.right-cup .ear-detail{
+    right:29px;
+}
+
+/* INTRO */
+
+.intro{
+    padding:120px 0;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:100px;
+    align-items:start;
+}
+
+.section-label{
+    font-size:11px;
+    letter-spacing:3px;
+    color:var(--copper);
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+.intro h2,
+.trust h2,
+.specs h2,
+.cta h2{
+    font-family:"Playfair Display",serif;
+    font-weight:500;
+    font-size:clamp(38px,4vw,58px);
+    line-height:1.08;
+    margin-top:15px;
+}
+
+.intro-copy{
+    color:var(--muted);
+    font-size:18px;
+    max-width:700px;
+}
+
+/* FEATURES */
+
+.features{
+    padding:20px 0 120px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);
+}
+
+.feature{
+    padding:40px 30px 20px 0;
+    border-right:1px solid var(--line);
+}
+
+.feature:not(:first-child){
+    padding-left:30px;
+}
+
+.feature:last-child{
+    border-right:0;
+}
+
+.feature-number{
+    color:var(--copper);
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.feature h3{
+    font-family:"Playfair Display",serif;
+    font-weight:500;
+    font-size:30px;
+    margin:18px 0 12px;
+}
+
+.feature p{
+    color:var(--muted);
+    font-size:15px;
+    max-width:300px;
+}
+
+/* TRUST */
+
+.trust{
+    background:#242720;
+    color:#f7f3eb;
+    padding:110px 0;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:90px;
+    align-items:center;
+}
+
+.trust .section-label{
+    color:#bf8c68;
+}
+
+.trust h2{
+    color:#fff;
+}
+
+.rating{
+    margin-top:25px;
+    font-size:14px;
+    color:#cfcbbf;
+}
+
+.testimonial{
+    border-left:1px solid #5f6358;
+    padding-left:40px;
+}
+
+.quote{
+    font-family:"Playfair Display",serif;
+    font-size:30px;
+    line-height:1.4;
+    margin-bottom:25px;
+}
+
+.author{
+    color:#b4b5ac;
+    font-size:13px;
+}
+
+.certifications{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+
+.certification{
+    border:1px solid #4f5349;
+    padding:8px 12px;
+    font-size:10px;
+    letter-spacing:1px;
+    color:#c3c5bd;
+}
+
+/* SPECS */
+
+.specs{
+    padding:120px 0;
+}
+
+.specs-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+    gap:40px;
+}
+
+.specs-head p{
+    max-width:400px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.spec-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.spec-table tr{
+    border-top:1px solid var(--line);
+}
+
+.spec-table tr:last-child{
+    border-bottom:1px solid var(--line);
+}
+
+.spec-table th,
+.spec-table td{
+    text-align:left;
+    padding:20px 10px;
+    font-size:14px;
+}
+
+.spec-table th{
+    width:35%;
+    color:var(--muted);
+    font-weight:400;
+}
+
+.spec-table td{
+    font-weight:500;
+}
+
+/* CTA */
+
+.cta{
+    background:#e5dfd1;
+    padding:110px 0;
+}
+
+.cta-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+}
+
+.cta p{
+    color:var(--muted);
+    margin-top:15px;
+    max-width:550px;
+}
+
+.cta-actions{
+    display:flex;
+    gap:22px;
+    align-items:center;
+    white-space:nowrap;
+}
+
+/* FOOTER */
+
+footer{
+    background:#20211e;
+    color:#d2d0c7;
+    padding:35px 0;
+}
+
+.footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:12px;
+}
+
+.footer-links{
+    display:flex;
+    gap:25px;
+    color:#a9a99f;
+}
+
+/* REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:4%;
+        width:92%;
+        background:var(--paper);
+        padding:25px;
+        flex-direction:column;
+        gap:20px;
+        box-shadow:0 15px 30px rgba(0,0,0,.08);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-grid,
+    .intro-grid,
+    .trust-grid{
+        grid-template-columns:1fr;
+        gap:55px;
+    }
+
+    .hero{
+        padding-top:125px;
+    }
+
+    .product-stage{
+        min-height:480px;
+    }
+
+    .product-backdrop{
+        width:360px;
+        height:360px;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature,
+    .feature:not(:first-child){
+        border-right:0;
+        border-bottom:1px solid var(--line);
+        padding:30px 0;
+    }
+
+    .feature:last-child{
+        border-bottom:0;
+    }
+
+    .specs-head,
+    .cta-inner,
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cta-actions{
+        flex-wrap:wrap;
+    }
+}
+
+@media(max-width:500px){
+
+    nav{
+        height:75px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .logo small{
+        display:none;
+    }
+
+    .hero h1{
+        letter-spacing:-1.5px;
+    }
+
+    .hero-buttons{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .product-stage{
+        min-height:390px;
+    }
+
+    .product-backdrop{
+        width:290px;
+        height:290px;
+    }
+
+    .headphones{
+        transform:scale(.8);
+    }
+
+    .trust,
+    .intro,
+    .specs,
+    .cta{
+        padding:80px 0;
+    }
+
+    .testimonial{
+        padding-left:20px;
+    }
+
+    .quote{
+        font-size:24px;
+    }
+
+    .spec-table th,
+    .spec-table td{
+        padding:16px 5px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">
+                [PRODUCT_NAME]
+                <small>AUDIO</small>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#trust">Reviews</a></li>
+                <li><a href="#specifications">Specifications</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/enquiry">Enquiry</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#contact" class="shop-link">Buy [PRODUCT_NAME]</a>
+                <button class="menu" onclick="toggleMenu()">☰</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+<section class="hero">
+    <div class="container hero-grid">
+
+        <div class="reveal">
+
+            <div class="eyebrow">
+                Wireless audio, refined
+            </div>
+
+            <h1>
+                Hear more.
+                <em>Carry less.</em>
+            </h1>
+
+            <p class="hero-copy">
+                [PRODUCT_NAME] combines effortless comfort, intelligent
+                sound and dependable wireless performance in one
+                considered design.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="primary-btn">
+                    Discover [PRODUCT_NAME]
+                </a>
+
+                <a href="#specifications" class="secondary-btn">
+                    View specifications
+                </a>
+            </div>
+
+            <div class="price-line">
+                <span class="price">[PRICE]</span>
+                <span class="price-note">Free delivery • [WARRANTY_PERIOD] warranty</span>
+            </div>
+
+        </div>
+
+
+        <div class="product-stage reveal">
+
+            <div class="product-backdrop"></div>
+            <div class="product-shadow"></div>
+
+            <div class="headphones">
+
+                <div class="band"></div>
+
+                <div class="left-cup">
+                    <div class="ear-detail"></div>
+                </div>
+
+                <div class="right-cup">
+                    <div class="ear-detail"></div>
+                </div>
+
+                <div class="left-pad"></div>
+                <div class="right-pad"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="intro">
+
+    <div class="container intro-grid reveal">
+
+        <div>
+            <div class="section-label">
+                Designed with intent
+            </div>
+
+            <h2>
+                Technology that disappears into the experience.
+            </h2>
+        </div>
+
+        <div class="intro-copy">
+            [PRODUCT_NAME] is built around one simple idea:
+            the best technology should feel natural.
+
+            <br><br>
+
+            From [KEY_FEATURE_1] to [KEY_FEATURE_2],
+            every element is designed to make listening easier,
+            clearer and more comfortable — without making the
+            product feel complicated.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="features" id="features">
+
+    <div class="container">
+
+        <div class="feature-grid reveal">
+
+            <article class="feature">
+
+                <div class="feature-number">01 — SOUND</div>
+
+                <h3>[KEY_FEATURE_1]</h3>
+
+                <p>
+                    Experience fuller, more balanced audio that
+                    keeps vocals clear and detail intact at every
+                    volume.
+                </p>
+
+            </article>
+
+
+            <article class="feature">
+
+                <div class="feature-number">02 — FREEDOM</div>
+
+                <h3>[KEY_FEATURE_2]</h3>
+
+                <p>
+                    Move naturally without constantly reaching
+                    for your device. [KEY_FEATURE_2] keeps your
+                    listening uninterrupted.
+                </p>
+
+            </article>
+
+
+            <article class="feature">
+
+                <div class="feature-number">03 — COMFORT</div>
+
+                <h3>[KEY_FEATURE_3]</h3>
+
+                <p>
+                    Thoughtful materials and a balanced fit make
+                    extended listening feel as effortless as the
+                    first few minutes.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="trust" id="trust">
+
+    <div class="container trust-grid reveal">
+
+        <div>
+
+            <div class="section-label">
+                Trusted by listeners
+            </div>
+
+            <h2>
+                Performance you can live with.
+            </h2>
+
+            <div class="rating">
+                ★★★★★ &nbsp; [RATING]/5 from [REVIEW_COUNT]+ verified customers
+            </div>
+
+        </div>
+
+
+        <div class="testimonial">
+
+            <div class="quote">
+                “[TESTIMONIAL_QUOTE]”
+            </div>
+
+            <div class="author">
+                — [CUSTOMER_NAME], verified customer
+            </div>
+
+            <div class="certifications">
+
+                <div class="certification">
+                    [CERTIFICATION_1]
+                </div>
+
+                <div class="certification">
+                    [CERTIFICATION_2]
+                </div>
+
+                <div class="certification">
+                    [CERTIFICATION_3]
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="specs" id="specifications">
+
+    <div class="container">
+
+        <div class="specs-head reveal">
+
+            <div>
+                <div class="section-label">
+                    Specifications
+                </div>
+
+                <h2>
+                    Everything you need.
+                </h2>
+            </div>
+
+            <p>
+                Clear specifications, without the technical
+                overload. Replace the placeholders below with
+                verified product information.
+            </p>
+
+        </div>
+
+
+        <table class="spec-table reveal">
+
+            <tr>
+                <th>Battery life</th>
+                <td>[BATTERY_LIFE]</td>
+            </tr>
+
+            <tr>
+                <th>Wireless range</th>
+                <td>[RANGE]</td>
+            </tr>
+
+            <tr>
+                <th>Compatibility</th>
+                <td>[COMPATIBILITY]</td>
+            </tr>
+
+            <tr>
+                <th>Connection</th>
+                <td>[BLUETOOTH_VERSION]</td>
+            </tr>
+
+            <tr>
+                <th>Charging</th>
+                <td>[CHARGING_TYPE]</td>
+            </tr>
+
+            <tr>
+                <th>Weight</th>
+                <td>[WEIGHT]</td>
+            </tr>
+
+            <tr>
+                <th>Noise control</th>
+                <td>[NOISE_CONTROL]</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<section class="cta" id="contact">
+
+    <div class="container cta-inner reveal">
+
+        <div>
+
+            <div class="section-label">
+                Ready when you are
+            </div>
+
+            <h2>
+                Make room for better sound.
+            </h2>
+
+            <p>
+                Discover [PRODUCT_NAME] for [PRICE], with
+                [WARRANTY_PERIOD] warranty and [DELIVERY_INFO].
+            </p>
+
+        </div>
+
+
+        <div class="cta-actions">
+
+            <a href="#" class="primary-btn">
+                Buy [PRODUCT_NAME]
+            </a>
+
+            <a href="#specifications" class="secondary-btn">
+                Compare specifications
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            © <span id="year"></span> [PRODUCT_NAME]
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Warranty</a>
+            <a href="#">Support</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+    link.addEventListener("click",function(){
+        document.getElementById("navLinks").classList.remove("show");
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+        if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+        }
+    });
+},{
+    threshold:.12
+});
+
+reveals.forEach(function(element){
+    observer.observe(element);
+});
+
+</script>
+
+</body>
+</html>
