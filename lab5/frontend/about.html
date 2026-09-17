@@ -1,0 +1,835 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[PRODUCT_NAME] — About Us</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+    --cream:#f3efe7;
+    --paper:#faf8f3;
+    --charcoal:#20211e;
+    --muted:#706f68;
+    --line:#dcd7cb;
+    --olive:#68705a;
+    --olive-dark:#4d5542;
+    --copper:#a66f4d;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--paper);
+    color:var(--charcoal);
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+}
+
+nav{
+    height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:600;
+}
+
+.logo small{
+    color:var(--muted);
+    font-size:11px;
+    letter-spacing:2px;
+    margin-left:8px;
+}
+
+.nav-links{
+    display:flex;
+    gap:34px;
+    list-style:none;
+    font-size:14px;
+}
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    height:1px;
+    width:0;
+    background:var(--charcoal);
+    transition:.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+    width:100%;
+}
+
+.shop-link{
+    padding:11px 19px;
+    background:var(--charcoal);
+    color:#fff;
+    border-radius:3px;
+    font-size:13px;
+}
+
+.menu{
+    display:none;
+    border:0;
+    background:none;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.hero{
+    background:var(--cream);
+    min-height:62vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    padding:130px 0 80px;
+}
+
+.hero-inner{
+    max-width:800px;
+    margin:auto;
+}
+
+.eyebrow,
+.label{
+    color:var(--copper);
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-weight:600;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,6vw,76px);
+    line-height:1.05;
+    font-weight:500;
+    margin:18px 0 22px;
+    letter-spacing:-2px;
+}
+
+.hero h1 em{
+    color:var(--olive-dark);
+    font-style:italic;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:17px;
+    max-width:650px;
+    margin:auto;
+}
+
+.story{
+    padding:120px 0;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:100px;
+    align-items:start;
+}
+
+.story h2,
+.values h2,
+.mission h2,
+.cta h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(38px,4vw,58px);
+    line-height:1.08;
+    font-weight:500;
+    margin-top:14px;
+}
+
+.story-copy{
+    color:var(--muted);
+    font-size:17px;
+}
+
+.story-copy p + p{
+    margin-top:20px;
+}
+
+.quote{
+    margin-top:35px;
+    padding-left:25px;
+    border-left:2px solid var(--copper);
+    font-family:"Playfair Display",serif;
+    font-size:26px;
+    line-height:1.4;
+}
+
+.image-box{
+    margin-top:70px;
+    min-height:430px;
+    background:#ddd8cb;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.image-box::before{
+    content:"";
+    position:absolute;
+    width:340px;
+    height:340px;
+    border-radius:50%;
+    background:#c8c4b7;
+}
+
+.device{
+    position:relative;
+    z-index:2;
+    width:180px;
+    height:205px;
+    border:18px solid #272824;
+    border-bottom:0;
+    border-radius:110px 110px 0 0;
+}
+
+.device::before,
+.device::after{
+    content:"";
+    position:absolute;
+    width:55px;
+    height:100px;
+    top:160px;
+    border-radius:20px;
+    background:#272824;
+}
+
+.device::before{
+    left:-52px;
+}
+
+.device::after{
+    right:-52px;
+}
+
+.values{
+    background:#ece7dd;
+    padding:110px 0;
+}
+
+.values-heading{
+    max-width:550px;
+    margin-bottom:50px;
+}
+
+.value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.value{
+    border-top:1px solid #cfc9bc;
+    padding-top:28px;
+}
+
+.number{
+    color:var(--copper);
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.value h3{
+    font-family:"Playfair Display",serif;
+    font-size:29px;
+    font-weight:500;
+    margin:18px 0 12px;
+}
+
+.value p{
+    color:var(--muted);
+    font-size:15px;
+}
+
+.stats{
+    padding:90px 0;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.stat{
+    padding:35px 20px;
+    text-align:center;
+    border-right:1px solid var(--line);
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat h3{
+    font-family:"Playfair Display",serif;
+    font-size:38px;
+    font-weight:500;
+}
+
+.stat p{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:5px;
+}
+
+.mission{
+    padding:80px 0 120px;
+}
+
+.mission-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.mission-card{
+    padding:45px;
+    border:1px solid var(--line);
+    background:#f5f1e8;
+}
+
+.mission-card h2{
+    font-size:37px;
+}
+
+.mission-card p{
+    color:var(--muted);
+    margin-top:18px;
+}
+
+.cta{
+    background:var(--charcoal);
+    color:#fff;
+    padding:100px 0;
+}
+
+.cta-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+}
+
+.cta .label{
+    color:#bf8c68;
+}
+
+.cta h2{
+    max-width:650px;
+}
+
+.cta p{
+    color:#b9b9b1;
+    margin-top:15px;
+    max-width:560px;
+}
+
+.cta-button{
+    display:inline-block;
+    background:#f2eee5;
+    color:var(--charcoal);
+    padding:15px 25px;
+    border-radius:3px;
+    font-size:13px;
+    white-space:nowrap;
+}
+
+footer{
+    background:var(--charcoal);
+    border-top:1px solid #3a3b35;
+    color:#b8b8b0;
+    padding:32px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12px;
+}
+
+.footer-links{
+    display:flex;
+    gap:25px;
+}
+
+@media(max-width:850px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:4%;
+        width:92%;
+        background:var(--paper);
+        padding:25px;
+        flex-direction:column;
+        gap:20px;
+        box-shadow:0 15px 30px rgba(0,0,0,.08);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .shop-link{
+        display:none;
+    }
+
+    .story-grid,
+    .mission-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .value-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat:nth-child(2){
+        border-right:0;
+    }
+
+    .stat:nth-child(-n+2){
+        border-bottom:1px solid var(--line);
+    }
+
+    .cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:500px){
+
+    nav{
+        height:75px;
+    }
+
+    .logo{
+        font-size:19px;
+    }
+
+    .logo small{
+        display:none;
+    }
+
+    .hero{
+        padding-top:115px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .story,
+    .mission{
+        padding:80px 0;
+    }
+
+    .image-box{
+        min-height:330px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+    }
+
+    .stat:last-child{
+        border-bottom:0;
+    }
+
+    .mission-card{
+        padding:30px 25px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+
+    <a href="index.html" class="logo">
+        [PRODUCT_NAME]
+        <small>AUDIO</small>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#specifications">Specifications</a></li>
+        <li><a href="/about" class="active">About</a></li>
+        <li><a href="/enquiry">Enquiry</a></li>
+    </ul>
+
+    <div>
+        <a href="index.html#contact" class="shop-link">Buy [PRODUCT_NAME]</a>
+        <button class="menu" onclick="toggleMenu()">☰</button>
+    </div>
+
+</nav>
+</div>
+</header>
+
+
+<section class="hero">
+
+<div class="container hero-inner">
+
+    <div class="eyebrow">The thinking behind the product</div>
+
+    <h1>
+        Made for people who
+        <em>listen closely.</em>
+    </h1>
+
+    <p>
+        [PRODUCT_NAME] was created to bring thoughtful design,
+        dependable technology and genuinely enjoyable sound
+        into the everyday.
+    </p>
+
+</div>
+
+</section>
+
+
+<section class="story">
+
+<div class="container">
+
+    <div class="story-grid">
+
+        <div>
+            <div class="label">Our story</div>
+
+            <h2>
+                Less distraction.
+                Better connection.
+            </h2>
+        </div>
+
+        <div class="story-copy">
+
+            <p>
+                We believe wireless audio should improve an
+                experience without demanding attention from it.
+                That principle shapes every part of [PRODUCT_NAME].
+            </p>
+
+            <p>
+                Instead of adding features simply because we can,
+                we focus on the things people notice every day:
+                comfortable fit, natural sound, reliable connection
+                and controls that make sense.
+            </p>
+
+            <p>
+                The result is a device designed to become part of
+                your routine rather than another piece of technology
+                you have to think about.
+            </p>
+
+            <div class="quote">
+                “Good technology should feel considered,
+                not complicated.”
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="image-box">
+
+        <div class="device"></div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="values">
+
+<div class="container">
+
+    <div class="values-heading">
+
+        <div class="label">What guides us</div>
+
+        <h2>
+            Three principles behind every decision.
+        </h2>
+
+    </div>
+
+
+    <div class="value-grid">
+
+        <article class="value">
+
+            <div class="number">01 — PURPOSE</div>
+
+            <h3>Useful by design.</h3>
+
+            <p>
+                Every feature should solve a real problem,
+                simplify an interaction or improve the way
+                you listen.
+            </p>
+
+        </article>
+
+
+        <article class="value">
+
+            <div class="number">02 — CRAFT</div>
+
+            <h3>Details matter.</h3>
+
+            <p>
+                Materials, controls, acoustics and proportions
+                are considered together so the product feels
+                coherent from the first touch.
+            </p>
+
+        </article>
+
+
+        <article class="value">
+
+            <div class="number">03 — LONGEVITY</div>
+
+            <h3>Made to stay relevant.</h3>
+
+            <p>
+                We favour reliable performance and enduring
+                design over trends that become outdated after
+                a season.
+            </p>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="stats">
+
+<div class="container">
+
+    <div class="stats-grid">
+
+        <div class="stat">
+            <h3>[10K+]</h3>
+            <p>Customers</p>
+        </div>
+
+        <div class="stat">
+            <h3>[4.8/5]</h3>
+            <p>Customer rating</p>
+        </div>
+
+        <div class="stat">
+            <h3>[X]</h3>
+            <p>Years of development</p>
+        </div>
+
+        <div class="stat">
+            <h3>[WARRANTY]</h3>
+            <p>Product warranty</p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="mission">
+
+<div class="container">
+
+    <div class="mission-grid">
+
+        <div class="mission-card">
+
+            <div class="label">Our mission</div>
+
+            <h2>
+                Make better audio feel effortless.
+            </h2>
+
+            <p>
+                We aim to create wireless products that respect
+                both your time and your attention — products that
+                work beautifully without asking to be noticed.
+            </p>
+
+        </div>
+
+
+        <div class="mission-card">
+
+            <div class="label">Our vision</div>
+
+            <h2>
+                A quieter kind of technology.
+            </h2>
+
+            <p>
+                As devices become more capable, we believe the
+                interface should become simpler. The future we
+                are building is connected, capable and remarkably
+                easy to live with.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="cta">
+
+<div class="container cta-inner">
+
+    <div>
+
+        <div class="label">Continue exploring</div>
+
+        <h2>
+            See what thoughtful wireless audio looks like.
+        </h2>
+
+        <p>
+            Explore [PRODUCT_NAME], its features and the details
+            behind the listening experience.
+        </p>
+
+    </div>
+
+    <a href="index.html#features" class="cta-button">
+        Explore the product
+    </a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="container footer-inner">
+
+    <div>
+        © <span id="year"></span> [PRODUCT_NAME]
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="#">Support</a>
+    </div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+    link.addEventListener("click",function(){
+        document.getElementById("navLinks").classList.remove("show");
+    });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
+```
