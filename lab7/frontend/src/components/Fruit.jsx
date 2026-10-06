@@ -26,7 +26,7 @@ const products = [
     const { picUrl, name, price, quantity } = props.fruit;
   
     const ListItem = products.map((item) => (
-      <li key={item.id} style={{color: item.isFruit ? "red" : "black"}}>
+      <li key={item.id} style={{color: item.isFruit ? "red" : "green"}}>
         {item.title}
       </li>
     ));
