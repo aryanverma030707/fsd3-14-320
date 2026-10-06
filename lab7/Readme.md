@@ -57,3 +57,4 @@ const { picUrl, bname, price, quantity, rating } = props.book;
 
 - App.jsx should have minimum code .
 - 
+- By Default button in HTML is Submit button 
