@@ -39,7 +39,6 @@ const{price, .....rest} = props.book;
 # any components include Style 
 1. external css - create class in index.css and use in component
 2. internal css - create property as object like 
-```
 
 const { picUrl, bname, price, quantity, rating } = props.book;
   const qtyStyle = {
@@ -51,3 +50,10 @@ const { picUrl, bname, price, quantity, rating } = props.book;
   }
 
 3. inline css- in this method we use 2 curly braces with style attributes. All the Css 
+
+
+
+
+
+- App.jsx should have minimum code .
+- 
